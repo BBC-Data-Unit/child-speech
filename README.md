@@ -53,4 +53,4 @@ The BBC Shared Data Unit makes data journalism available to the wider news indus
 
 Stories written in print and online by partners based on this research included:
 
-* 
+* Rutland and Stamford Mercury: [More children need speech and language support in first year of school, with the rise in Lincolnshire above the national average](https://www.stamfordmercury.co.uk/news/more-children-need-speech-and-language-support-in-first-year-9282911/)
