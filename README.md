@@ -6,7 +6,13 @@ In November 2022 the BBC Shared Data Unit [looked at the rise in the number of f
 
 ## Regional analysis
 
-A [dedicated website](https://senspeech.github.io/website/index.html) was created for the story which provided:
+A [dedicated website](https://senspeech.github.io/website/index.html) was created for the story which provided quotes from:
+
+* Kamini Gadhok, Chief Executive of the Royal College of Speech, Language, Therapists (RCSLT)
+* Jane Harris, chief executive of Speech and Language UK
+* Minister for Schools and Childhood, Kelly Tolhurst, Department for Education
+
+In addition, a page for each local authority provided:
 
 * A customised text description of the situation in that area: how much numbers had risen or fallen in that area, whether the year-on-year change was higher or lower than the national average, and where the authority ranked in its region for change, compared to other local authorities
 * Interactive tables putting each local authority into the context of other parts of the region, both in terms of absolute numbers and year-on-year change
