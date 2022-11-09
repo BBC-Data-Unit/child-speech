@@ -6,13 +6,19 @@ In November 2022 the BBC Shared Data Unit [looked at the rise in the number of f
 
 ## Methodology
 
-An R script was written in a Python notebook to download data, filter it, pivot it by local authority and year, and calculate year-on-year changes. 
+An [R script was written in a Python notebook](https://github.com/BBC-Data-Unit/child-speech/blob/main/sen_covid_R1_ChangeByLA.ipynb) to download data, filter it, pivot it by local authority and year, and calculate year-on-year changes. 
 
-A second script downloaded data on pupil numbers, combined it with the figures on special educational needs (SEN), and divided the SEN figures by total pupil numbers to get a proportion. This allowed us to test whether an increase in speech, language and communication (SLC) needs might simply be due to an increase in pupils (it was not)
+A [second script](https://github.com/BBC-Data-Unit/child-speech/blob/main/sen_covid_R2_pupilNumbers.ipynb) downloaded data on pupil numbers, combined it with the figures on special educational needs (SEN), and divided the SEN figures by total pupil numbers to get a proportion. This allowed us to test whether an increase in speech, language and communication (SLC) needs might simply be due to an increase in pupils (it was not)
 
-A third script downloaded data on the numbers of pupils for whom English was a second language (ESL), to test whether an increase in speech, language and communication needs might be due to an increase in ESL pupils (it was not), or if there was a relationship between the proportion of ESL pupils in a local authority and the proportion needing speech, language and communication support (there was no correlation). 
+A [third script](https://github.com/BBC-Data-Unit/child-speech/blob/main/sen_covid_R3_eslNumbers.ipynb) downloaded data on the numbers of pupils for whom English was a second language (ESL), to test whether an increase in speech, language and communication needs might be due to an increase in ESL pupils (it was not), 
 
-A fourth analysis compared the increase in SLC needs against other forms of special educational needs. This was done using a pivot table generated from the `sen_ncyear.csv` file. Speech and language is the biggest category of need, accounting for more than half of year 1 children needing SEN support, and has experienced one of the biggest increases. Only two categories experienced bigger rises: Multi-sensory impairment increased by 33% but this was from a low base (from 239 to 319 children nationally in year 1); and “SEN support but no specialist assessment of type of need” increased by 13%, from 2698 to 3044 children. 
+[A spreadsheet was used to test (using the `CORREL` function)](https://github.com/BBC-Data-Unit/child-speech/blob/main/SEN%20correlation%20vs%20ESL.xlsx) if there was any indication of a relationship between the proportion of ESL pupils in a local authority and the proportion needing speech, language and communication support: there was no correlation. 
+
+The increase in SLC needs was also compared against other forms of special educational needs. This was done using [a pivot table](https://github.com/BBC-Data-Unit/child-speech/blob/main/sen_ncyear_COMPARE_NEEDS%20-%20Sheet1.csv) generated from the `sen_ncyear.csv` file downloaded from the DfE (see 'Get The Data' below). 
+
+Speech and language was the biggest category of need, accounting for more than half of year 1 children needing SEN support, and had experienced one of the biggest increases. Only two categories experienced bigger rises: Multi-sensory impairment increased by 33% but this was from a low base (from 239 to 319 children nationally in year 1); and “SEN support but no specialist assessment of type of need” increased by 13%, from 2698 to 3044 children. 
+
+[Further spreadsheet analysis compared the rise in Year 1 to other year groups](https://github.com/BBC-Data-Unit/child-speech/blob/main/sen_ncyear_COMPARE_YRGROUP.xlsx). This found that the rise in Year 1 was higher than any other age group, apart from Early Years. However, this was distorted by the number of pupils in Early Years education dropping significantly in the previous year due to parents keeping children home during the pandemic. The same drop did not exist in Year 1. The same pattern applied when the change in proportion was compared between years. 
 
 
 ## Regional analysis
