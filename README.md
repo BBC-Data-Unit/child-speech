@@ -23,6 +23,11 @@ In addition, a page for each local authority provided:
 
 ## Get the data
 
+Data on SEN was downloaded from the Department for Education's [Special educational needs in England data page](https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england) - specifically the 'Download all data' link and the file sen_ncyear.csv within that. Column M for 'primary_need' was filtered to 'Speech, Language and Communications needs'
+
+Data on pupil numbers was obtained from [Schools, pupils and their characteristics](https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics). 
+
+
 ## Partner usage
 
 The story [featured on BBC Online](https://www.bbc.co.uk/news/education-63373804) and BBC News at One. It was also discussed in debates on Radio 5Live.
