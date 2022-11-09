@@ -6,6 +6,13 @@ In November 2022 the BBC Shared Data Unit [looked at the rise in the number of f
 
 ## Regional analysis
 
+A [dedicated website](https://senspeech.github.io/website/index.html) was created for the story which provided:
+
+* A customised text description of the situation in that area: how much numbers had risen or fallen in that area, whether the year-on-year change was higher or lower than the national average, and where the authority ranked in its region for change, compared to other local authorities
+* Interactive tables putting each local authority into the context of other parts of the region, both in terms of absolute numbers and year-on-year change
+* A line chart which showed how numbers in that area had changed in the last 6 years
+* A grouped bar chart showing year-on-year changes in that area compared to the national figures
+
 ## Get the data
 
 ## Partner usage
