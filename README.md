@@ -6,6 +6,15 @@ In November 2022 the BBC Shared Data Unit [looked at the rise in the number of f
 
 ## Methodology
 
+An R script was written in a Python notebook to download data, filter it, pivot it by local authority and year, and calculate year-on-year changes. 
+
+A second script downloaded data on pupil numbers, combined it with the figures on special educational needs (SEN), and divided the SEN figures by total pupil numbers to get a proportion. This allowed us to test whether an increase in speech, language and communication (SLC) needs might simply be due to an increase in pupils (it was not)
+
+A third script downloaded data on the numbers of pupils for whom English was a second language (ESL), to test whether an increase in speech, language and communication needs might be due to an increase in ESL pupils (it was not), or if there was a relationship between the proportion of ESL pupils in a local authority and the proportion needing speech, language and communication support (there was no correlation). 
+
+A fourth analysis compared the increase in SLC needs against other forms of special educational needs. This was done using a pivot table generated from the `sen_ncyear.csv` file. Speech and language is the biggest category of need, accounting for more than half of year 1 children needing SEN support, and has experienced one of the biggest increases. Only two categories experienced bigger rises: Multi-sensory impairment increased by 33% but this was from a low base (from 239 to 319 children nationally in year 1); and “SEN support but no specialist assessment of type of need” increased by 13%, from 2698 to 3044 children. 
+
+
 ## Regional analysis
 
 A [dedicated website](https://senspeech.github.io/website/index.html) was created for the story which provided quotes from:
@@ -23,7 +32,7 @@ In addition, a page for each local authority provided:
 
 ## Get the data
 
-Data on SEN was downloaded from the Department for Education's [Special educational needs in England data page](https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england) - specifically the 'Download all data' link and the file sen_ncyear.csv within that. Column M for 'primary_need' was filtered to 'Speech, Language and Communications needs'
+Data on SEN was downloaded from the Department for Education's [Special educational needs in England data page](https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england) - specifically the 'Download all data' link and the file `sen_ncyear.csv` within that. Column M for 'primary_need' was filtered to 'Speech, Language and Communications needs'
 
 Data on pupil numbers was obtained from [Schools, pupils and their characteristics](https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics). 
 
