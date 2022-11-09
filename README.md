@@ -38,9 +38,11 @@ In addition, a page for each local authority provided:
 
 ## Get the data
 
-Data on SEN was downloaded from the Department for Education's [Special educational needs in England data page](https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england) - specifically the 'Download all data' link and the file `sen_ncyear.csv` within that. Column M for 'primary_need' was filtered to 'Speech, Language and Communications needs'
-
-Data on pupil numbers was obtained from [Schools, pupils and their characteristics](https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics). 
+* [Special educational needs in England](https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england) - the data used in this project can be found under the 'Download all data' link and the file `sen_ncyear.csv` within that. Column M for 'primary_need' was filtered to 'Speech, Language and Communications needs'
+* [Schools, pupils and their characteristics](https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics)
+* [Speech, communication and language needs by by local authority 2015-22 - year 1 pupils](https://github.com/BBC-Data-Unit/child-speech/blob/main/SEN%20(language)%20by%20LA%202015-22%20-%20year%201%20pupils.xlsx)
+* [Additional Support Needs (ASN) in Scotland by type of need and local authority](https://github.com/BBC-Data-Unit/child-speech/blob/main/Scotland%20ASN%20(SEN)%20data%20by%20type%20of%20need.xlsx)
+* [SEN in Wales 2018-22 by local authority](https://github.com/BBC-Data-Unit/child-speech/blob/main/walesSEN18to22_pup_analysis.xlsx)
 
 
 ## Partner usage
