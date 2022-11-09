@@ -1,0 +1,60 @@
+"Education and skills > Schools and teachers > Schools census > Pupil Level Annual School Census (PLASC) > Pupils > Pupils by local authority and year group"
+"Pupils by local authority and year group"
+
+Filters:
+Year: 2019/20
+
+"","Nursery 1 ","Nursery 2 ","Reception ","Year Group 1 ","Year Group 2 ","Year Group 3 ","Year Group 4 ","Year Group 5 ","Year Group 6 ","Year Group 7 ","Year Group 8 ","Year Group 9 ","Year Group 10 ","Year Group 11 ","Year Group 12 ","Year Group 13 ","Year Group 14 "
+"Isle of Anglesey (1)",".",630,690,730,765,780,790,765,755,690,655,645,650,640,280,240,"."
+"Gwynedd (1)",".",1135,1145,1170,1240,1325,1270,1320,1275,1350,1365,1340,1265,1135,400,295,10
+"Conwy (1)",".",1040,1095,1105,1160,1195,1210,1225,1125,1125,1115,1125,1100,1035,625,490,10
+"Denbighshire (1)",15,1010,1080,1105,1130,1080,1185,1135,1110,1360,1230,1215,1195,1060,450,340,15
+"Flintshire (1)",90,1510,1640,1680,1740,1825,1795,1815,1810,1740,1755,1650,1640,1610,570,535,10
+"Wrexham (1)",100,1430,1505,1565,1625,1645,1675,1620,1640,1380,1285,1295,1240,1125,165,135,30
+"Powys (2)",90,390,1205,1290,1255,1285,1355,1300,1305,1410,1295,1280,1300,1260,530,460,15
+"Ceredigion (2)",100,485,675,640,655,705,675,740,620,725,750,680,725,720,395,310,"."
+"Pembrokeshire (2)",305,1070,1280,1285,1215,1430,1380,1365,1340,1230,1210,1205,1140,1130,350,265,5
+"Carmarthenshire (2)",390,1600,1935,1950,1965,2100,2105,2040,1970,2180,2025,1960,1955,1845,735,650,5
+"Swansea (2)",770,2390,2565,2535,2580,2780,2775,2675,2645,2730,2580,2490,2415,2430,750,625,15
+"Neath Port Talbot (2)",470,1470,1485,1485,1485,1580,1650,1575,1580,1695,1625,1610,1645,1510,220,190,5
+"Bridgend (3)",280,1525,1580,1575,1670,1735,1805,1730,1630,1690,1675,1565,1645,1450,845,650,25
+"Vale of Glamorgan (3)",410,1460,1630,1565,1660,1655,1695,1720,1660,1725,1655,1555,1545,1460,800,665,10
+"Rhondda Cynon Taf (3)",415,2615,2670,2675,2760,2815,2935,2830,2825,2945,2835,2855,2810,2610,1320,925,50
+"Merthyr Tydfil (3)",200,685,770,725,720,745,730,655,720,700,625,595,580,520,10,10,5
+"Caerphilly (4)",440,1945,2075,2020,2095,2090,2185,2140,2120,2145,2010,1985,1930,1980,480,325,15
+"Blaenau Gwent (4)",255,665,730,780,780,740,760,785,765,680,575,630,560,615,10,5,10
+"Torfaen (4)",165,780,1040,1070,1135,1105,1145,1150,1095,1155,1115,1130,1110,1080,215,290,10
+"Monmouthshire (4)",115,330,885,840,900,945,905,900,915,815,755,795,805,785,460,360,"."
+"Newport (4)",265,1635,2025,1980,2020,1990,2025,2020,1965,2045,1885,1760,1765,1630,840,700,5
+"Cardiff (3)",670,3750,4155,4195,4145,4360,4350,4205,4275,4070,3870,3710,3585,3265,1825,1340,25
+"Wales (5)",5545,29550,33860,33955,34695,35905,36405,35710,35140,35585,33875,33095,32610,30895,12265,9805,270
+
+
+
+Footnotes:
+"1","North Wales"
+"2","South West and Mid Wales"
+"3","Central South Wales"
+"4","South East Wales"
+"5","There are four formal Education consortia in Wales covering: North Wales, South West and Mid Wales, Central South Wales, South East Wales."
+".","The data item is not applicable."
+Metadata:
+"Title","Pupils by local authority and year group"
+"Last update","31/08/2022"
+"Next update","July 2023 (provisional)"
+"Publishing organisation","Welsh Government"
+"Source 1","Pupil Level Annual School Census (PLASC), Welsh Government"
+"Contact email","school.stats@gov.wales"
+"Designation","National Statistics"
+"Lowest level of geographical disaggregation","Local authorities"
+"Geographical coverage","Wales"
+"Languages covered","English and Welsh"
+"Data licensing","You may use and re-use this data free of charge in any format or medium, under the terms of the Open Government License - see http://www.nationalarchives.gov.uk/doc/open-government-licence"
+"General description","See other items"
+"Data collection and calculation","Schools' data are derived from the Pupil Level Annual School Census (PLASC) returns and STATS 1 returns supplied by schools open on Census day in January each year. The returns are authorised by headteachers and validated by Local Authorities."
+"Frequency of publication","Annual"
+"Data reference periods","From 2003/04 or more recently if the data item is not available for earlier years."
+"Rounding applied","* = Pupil numbers greater than zero but less than five. Pupil numbers have been rounded to the nearest 5."
+"Statistical quality","School Census returns are authorised by headteachers and validated by Local Authorities.
+
+Whilst most of the usual data validation processes on the 2020 school census data have taken place, due to the coronavirus pandemic, the data did not undergo the usual final validation process. As part of the Welsh Local Government Finance Settlement, the data is usually returned to local authorities for final validation. Typically, overall numbers of pupils and teachers will not change significantly during this period, with the most likely change being in the characteristics of the pupils themselves e.g. free school meal entitlement. Users should therefore be more cautious when comparing data on characteristics of pupils and staff over time, in particular where small cohorts are involved."

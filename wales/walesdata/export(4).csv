@@ -1,0 +1,55 @@
+"Education and skills > Schools and teachers > Schools census > Pupil Level Annual School Census (PLASC) > Additional learning and special educational needs > Reports of additional learning or special educational needs by local authority and type of need"
+"Reports of additional learning or special educational needs by local authority and type of need"
+
+Filters:
+Year: 2017/18
+
+"","Moderate learning difficulties (1)","General learning difficulties (1)","Severe learning difficulties (1)","Profound & multiple learning difficulties (1)","Dyslexia (1)","Dyscalculia (1)","Dyspraxia (1)","Attention Deficit Hyperactivity Disorder (1)","Autistic Spectrum Disorders (1)","Physical and medical difficulties (1)","Hearing impairment (1)","Visual impairment (1)","Multi-sensory impairment (1)","Speech, language and communication difficulties (1)","Behavioural, emotional and social difficulties (1)"
+"Isle of Anglesey ",345,465,135,30,320,30,85,45,130,185,40,45,"*",450,475
+"Gwynedd ",960,530,160,55,545,70,110,50,150,230,80,65,"*",1170,630
+"Conwy ",325,1340,45,25,470,50,60,125,380,190,60,35,"*",1105,695
+"Denbighshire ",225,1820,80,25,320,15,65,250,430,290,60,75,15,1185,1185
+"Flintshire ",715,1675,95,35,230,30,30,190,260,335,70,55,10,1045,1400
+"Wrexham ",635,1560,105,25,215,10,55,240,335,215,70,50,5,850,840
+"Powys ",235,1700,105,35,320,25,25,70,220,255,95,55,10,590,990
+"Ceredigion ",555,1235,45,20,225,60,20,40,90,105,50,20,"*",395,420
+"Pembrokeshire ",1050,390,220,75,695,70,90,195,400,275,90,65,5,1125,1065
+"Carmarthenshire ",1545,2720,260,75,350,35,55,120,275,515,170,110,20,1980,1960
+"Swansea ",2045,2875,115,80,455,"*",85,175,710,545,205,105,15,2560,1640
+"Neath Port Talbot ",480,2335,105,35,110,"*",30,130,505,235,235,115,20,1415,1185
+"Bridgend ",305,1855,95,60,445,"*",30,175,520,230,165,65,10,860,1010
+"Vale of Glamorgan ",330,1260,50,40,515,15,40,175,385,305,140,75,5,635,805
+"Rhondda Cynon Taf ",2945,2195,510,70,490,15,90,265,720,925,235,130,5,1905,2400
+"Merthyr Tydfil ",290,1265,110,10,155,15,15,95,205,155,60,25,".",425,615
+"Caerphilly ",505,2320,55,20,460,15,30,65,405,405,300,50,5,1355,1140
+"Blaenau Gwent ",385,490,70,25,305,"*",10,15,155,165,100,15,10,500,595
+"Torfaen ",590,1265,75,35,160,5,15,45,260,295,185,45,5,460,915
+"Monmouthshire ",505,425,45,10,230,15,10,20,125,165,125,20,5,355,480
+"Newport ",745,1820,150,35,565,125,20,60,330,345,275,95,10,1440,1305
+"Cardiff ",1155,4870,210,40,510,50,65,285,665,860,315,150,10,2370,2665
+
+
+
+Footnotes:
+"1","From January 2017 maintained schools were allowed to report as many types of special educational need for a pupil as required and the ranking of those needs was removed. The 'Major need' used in earlier publications no longer applies and therefore the figures are not directly comparable with previous years."
+".","The data item is not applicable."
+Metadata:
+"Title","Reports of Special Educational Needs (SEN) by local authority and type of need."
+"Last update","31/08/2022"
+"Next update","July 2023 (provisional)"
+"Publishing organisation","Welsh Government"
+"Source 1","Pupil Level Annual School Census (PLASC), Welsh Government"
+"Contact email","school.stats@gov.wales"
+"Designation","National Statistics"
+"Lowest level of geographical disaggregation","Local authorities"
+"Geographical coverage","Local authorities"
+"Languages covered","English and Welsh"
+"Data licensing","You may use and re-use this data free of charge in any format or medium, under the terms of the Open Government License - see http://www.nationalarchives.gov.uk/doc/open-government-licence"
+"Statistical quality","School Census returns are authorised by headteachers and validated by Local Authorities.
+
+Whilst most of the usual data validation processes on the 2020 school census data have taken place, due to the coronavirus pandemic, the data did not undergo the usual final validation process. As part of the Welsh Local Government Finance Settlement, the data is usually returned to local authorities for final validation. Typically, overall numbers of pupils and teachers will not change significantly during this period, with the most likely change being in the characteristics of the pupils themselves e.g. free school meal entitlement. Users should therefore be more cautious when comparing data on characteristics of pupils and staff over time, in particular where small cohorts are involved."
+"General description","See other items"
+"Data collection and calculation","Schools' data are derived from the Pupil Level Annual School Census (PLASC) returns and STATS 1 returns supplied by schools open on Census day in January each year. The returns are authorised by headteachers and validated by Local Authorities."
+"Frequency of publication","Annual"
+"Data reference periods","From January 2017"
+"Rounding applied","* = Numbers greater than zero but less than five. Numbers have been rounded to the nearest 5."

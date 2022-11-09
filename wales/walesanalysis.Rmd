@@ -1,0 +1,89 @@
+---
+title: "Wales analysis"
+output: html_notebook
+---
+
+# Analysing data on SEN in Wales
+
+The data has been downloaded manually from StatsWales's [Reports of additional learning or special educational needs by local authority and type of need](https://statswales.gov.wales/Catalogue/Education-and-Skills/Schools-and-Teachers/Schools-Census/Pupil-Level-Annual-School-Census/Special-Educational-Needs/reportsofspecialeducationalneeds-by-localauthority-typeofneed) in 5 CSV files.
+
+## Import the data, and clean
+
+We now import those.
+
+```{r import data}
+wales22 <- read.csv("walesdata/export.csv", skip = 6)
+wales21 <- read.csv("walesdata/export(1).csv", skip = 6)
+wales20 <- read.csv("walesdata/export(2).csv", skip = 6)
+wales19 <- read.csv("walesdata/export(3).csv", skip = 6)
+wales18 <- read.csv("walesdata/export(4).csv", skip = 6)
+```
+
+Add the year.
+
+```{r add year}
+wales22$year <- "21/22"
+wales21$year <- "20/21"
+wales20$year <- "19/20"
+wales19$year <- "18/19"
+wales18$year <- "17/18"
+```
+
+And combine into a single data frame.
+
+```{r combine data}
+wales18to22 <- rbind(wales18, wales19, wales20, wales21, wales22)
+```
+
+The first column name is missing so we add that.
+
+```{r rename column 1}
+colnames(wales18to22)[1] <- "local_authority"
+colnames(wales18to22)
+```
+
+```{r export wales18to22}
+write.csv(wales18to22, "wales18to22.csv")
+```
+
+
+## Import pupil totals
+
+We need to check if there's been a drop in pupil numbers
+
+
+```{r import pup data}
+wales22 <- read.csv("walesdata_pupils/export.csv", skip = 6)
+wales21 <- read.csv("walesdata_pupils/export(1).csv", skip = 6)
+wales20 <- read.csv("walesdata_pupils/export(2).csv", skip = 6)
+wales19 <- read.csv("walesdata_pupils/export(3).csv", skip = 6)
+wales18 <- read.csv("walesdata_pupils/export(4).csv", skip = 6)
+```
+
+Add the year.
+
+```{r add year pup}
+wales22$year <- "21/22"
+wales21$year <- "20/21"
+wales20$year <- "19/20"
+wales19$year <- "18/19"
+wales18$year <- "17/18"
+```
+
+And combine into a single data frame.
+
+```{r combine pup data}
+wales18to22_pupils <- rbind(wales18, wales19, wales20, wales21, wales22)
+```
+
+The first column name is missing so we add that.
+
+```{r rename column 1 pup}
+colnames(wales18to22_pupils)[1] <- "local_authority"
+colnames(wales18to22_pupils)
+```
+
+```{r export wales18to22 pup}
+write.csv(wales18to22_pupils, "wales18to22_pup.csv")
+```
+
