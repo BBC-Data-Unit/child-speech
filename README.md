@@ -1,5 +1,7 @@
 # Child speech delays increase following lockdowns
 
+![Seven-year-old Lewis is growing in confidence and can now hold a conversation after attending his school's speech hub](https://ichef.bbci.co.uk/news/976/cpsprodpb/E8B3/production/_127317595_7cc1bdf4-c63c-4e06-9695-a201fc28140c.jpg.webp)
+
 In November 2022 the BBC Shared Data Unit [looked at the rise in the number of five and six year olds who need speech and language support at school](https://www.bbc.co.uk/news/education-63373804), finding that it had risen by 10% in England in the last year.
 
 ## Methodology
