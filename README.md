@@ -47,6 +47,8 @@ In addition, a page for each local authority provided:
 
 ## Partner usage
 
+![](https://raw.githubusercontent.com/BBC-Data-Unit/child-speech/main/images/telegraph_image.jpg)
+
 The story [featured on BBC Online](https://www.bbc.co.uk/news/education-63373804) and BBC News at One. It was also discussed in debates on Radio 5Live.
 
 The BBC Shared Data Unit makes data journalism available to the wider news industry as part of the BBC Local News Partnership.
