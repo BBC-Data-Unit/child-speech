@@ -1,0 +1,282 @@
+---
+title: "Render and clean"
+output: md_notebook
+---
+
+# Rendering the website and cleaning the HTML files
+
+* In notebook 1 a template was created that could be used to generate text descriptions and tables for each authority
+* In notebook 2 dozens of different markdown files were generated from that template
+
+This notebook details the next step: combining those pages into a website, and generating an index page.
+
+## Store a list of markdown files
+
+First, we need to store a list of all the files that are going to be used. These are in a folder called 'site'.
+
+We then loop through those file names and, for those which end in '.md', we use those names to generate some code and store it in a YAML file within the same 'site' folder.
+
+```{r get file names and generate yaml}
+#code adapted from https://github.com/BBC-Data-Unit/police_misconduct/blob/main/rfiles/03renderAndClean.Rmd
+#get the names of all the html files
+filenames <- list.files("site")
+#store the string we want to start out yaml file with
+yamlstring <- 'name: "la"
+navbar:
+  title: "Schools see language needs rise post lockdown"
+  left:
+    - text: "Local authorities"
+      menu:'
+#create an empty vector to store all the strings we're about to create
+strvec <- c()
+#loop through the filenames 
+for (i in filenames){
+  if(substring(i,nchar(i)-2,nchar(i)) == ".md" ){
+    #replace spaces with dashes, and replace the file extension with .html
+    htmlversion <- gsub(" ","-",gsub(".md",".html",i))
+    #get the name by removing the file extension. 
+    textversion <- gsub(".md","",i)
+    #create a string for the YAML file by inserting those
+    fullstring <- paste0('
+      - text: "',textversion,'"
+        href: ',htmlversion)
+    strvec <- c(strvec,fullstring) #add to the collection of strings 
+  }
+}
+#add the initial string
+strvec <- c(yamlstring, strvec)
+#create a yaml file with that string of text in it
+write(strvec, file = "site/_site.yml")
+```
+
+## Render the files
+
+Finally, we use the `render_site` function to specify the folder containing all the files for the site. The YAML file will be used to generate a menu, among other things.
+
+The resulting HTML files are moved to another subfolder, called '_site'.
+
+```{r render site}
+#now render the site
+rmarkdown::render_site("site")
+```
+
+We also want to render the index file. 
+
+## Clean the HTML outputs
+
+The pages have some HTML which needs to be removed because it is being rendered as paragraph text: `<p>&lt;!DOCTYPE html&gt;</p>`.
+
+```{r list html files}
+#get the names of all the html files
+htmlfiles <- list.files("site/_site")
+htmlfiles[4]
+#read in the first one
+testfile <- readr::read_lines(paste0("site/_site/",htmlfiles[4]))
+#create an empty list
+tfvec <- c()
+#loop through all the lines
+for(i in testfile){
+  #check if the line matches the string
+  tfmatch <- i == "<p>&lt;!DOCTYPE html&gt;</p>"
+  #store the True/False value in a vector
+  tfvec <- c(tfvec,tfmatch)
+}
+
+#find the index of the line with that text
+doctypeline <- which(tfvec)
+print(doctypeline)
+#show the  line
+#testfile[174]
+testfile[doctypeline]
+#replace it
+testfile[doctypeline] <- ""
+testfile[doctypeline]
+#save it as a HTML file to check
+write(x = testfile, file=paste0("site/_site/","testfile.html"))
+#remove the variable
+rm(testfile)
+```
+
+
+Once tested, we embed that process in a loop which tests if the file is one of the pages and then removes the offending line if so.
+
+```{r clean all files}
+#create a list to catch matches
+matchlist <- c()
+#loop through the list of filenames
+for (i in htmlfiles){
+  print(i)
+  #extract the last 5 chars
+  filetype <- substring(i,nchar(i)-4,nchar(i))
+  #check if they end in .html
+  ey <- filetype == ".html"
+  print(filetype)
+  #this should be TRUE or FALSE
+  print(ey)
+  #if it's a html file
+  if(ey){
+    #read in that file
+    thisfile <- readr::read_lines(paste0("site/_site/",i))
+    #show line
+    print(thisfile[174])
+    #if it has that text
+    if (thisfile[174] == "<p>&lt;!DOCTYPE html&gt;</p>"){
+      print("OH 174!")
+      #replace specified string
+      thisfile[174] <- ""
+      write(x = thisfile, file=paste0("site/_site/",i))
+    }
+    #grab the same line we identified in the code chunk above
+    else if(thisfile[doctypeline] == "<p>&lt;!DOCTYPE html&gt;</p>"){
+      stringtoprint <- paste("OH",doctypeline,"!")
+      print(stringtoprint)
+      #replace specified string
+      thisfile[doctypeline] <- ""
+      write(x = thisfile, file=paste0("site/_site/",i))
+    }
+    else {
+      print("NOPE")
+      #add filename to list
+      matchlist <- c(matchlist,i)
+    }
+  }
+  else {
+    print("NOT THIS ONE")
+  }
+}
+```
+
+
+### Clean up the index page menus
+
+We also need to clean the dropdown menu in the index page: by default this lists all the forces but is too long to fit on one screen and cannot be scrolled. 
+
+So we need to split it into multiple menus instead.
+
+
+```{r clean index menu}
+#read it in
+indexfile <- readr::read_lines("site/_site/index.html")
+#line 256 should be the title of the dropdown, 'Local authorities'
+indexfile[256]
+#change it
+indexfile[256] <- "Local authorities A-B"
+indexfile[256]
+#line 322 should be the beginning of the first C authority, Calderdale
+indexfile[321:323]
+#add HTML which closes the first part of the list and begins a second list with a dropdown button
+#code taken from https://github.com/sduiopc/test1/blob/8938ef49cf45eb5cb67ab73974c8bdbf33aee4c5/index.html
+#which is the version where I did this manually
+indexfile[321] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">C-E<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+indexfile[321:323]
+#replace 'Cen' as this is a dead link
+indexfile[327:329] <- ""
+#now for the first authority after Essex
+indexfile[393:395]
+#split there too
+indexfile[393] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">G-K<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+#split on Lambeth
+indexfile[462:464]
+indexfile[462] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">L-M<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+#split on Newcastle
+indexfile[504:506]
+indexfile[504] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">N-P<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+#split on Reading
+indexfile[561:563]
+indexfile[561] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+#split on Salford
+indexfile[582:584]
+indexfile[582] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">S<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+#split on Tameside
+indexfile[651:653]
+indexfile[651] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">T-Z<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+indexfile[663:665] <- ""
+#save file
+write(x = indexfile, file=paste0("site/_site/","index.html"))
+```
+
+## Clean the navigation in other pages
+
+We need to ensure this navbar is the same in all pages.
+
+We also need to remove the duplicate `<html>` tag which otherwise prevents the navbar working. This and other duplicate lines of code run from lines 745-889.
+
+
+```{r remove nav in area files}
+#store the line numbers for the starting points so we only have to change them here
+menutitleline <- 254
+htmlline <- 743
+
+#create a list to catch matches
+matchlist <- c()
+#loop through the list of filenames
+for (i in htmlfiles){
+  print(i)
+  #extract the last 5 chars
+  filetype <- substring(i,nchar(i)-4,nchar(i))
+  #check if they end in .html
+  ey <- filetype == ".html"
+  print(filetype)
+  #this should be TRUE or FALSE
+  print(ey)
+  #we don't want to change the index.html file so set to false if it's that file
+  if(i == 'index.html'){
+    print("NOT THIS ONE")
+    ey <- FALSE
+  }
+  #if it's a html file (apart from index.html)
+  if(ey){
+    #read in that file
+    thisfile <- readr::read_lines(paste0("site/_site/",i))
+    #line 254 should be the title of the dropdown, 'Local authorities'
+    print(thisfile[menutitleline])
+    #if it has that text
+    if (thisfile[menutitleline] == '    Local authorities'){
+      print(paste("OH ",menutitleline,"!"))
+      #replace specified string
+      #change it
+      thisfile[menutitleline] <- "Local authorities A-B"
+      #line 322 should be the beginning of the first C authority, Calderdale
+      #print(thisfile[menutitleline+65])
+      thisfile[menutitleline+65] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">C-E<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+      #replace 'Cen' as this is a dead link
+      thisfile[(menutitleline+71):(menutitleline+73)] <- ""
+      #now for the first authority after Essex
+      thisfile[menutitleline+137] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">G-K<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+      #split on Lambeth
+      thisfile[menutitleline+206] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">L-M<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+      #split on Newcastle
+      thisfile[menutitleline+248] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">N-P<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+      #split on Reading
+      thisfile[menutitleline+305] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+      #split on Salford
+      thisfile[menutitleline+326] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">S<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+      #split on Tameside
+      #print(thisfile[(menutitleline+395):(menutitleline+397)])
+      thisfile[menutitleline+395] <- '</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">T-Z<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>'
+      #print(thisfile[(menutitleline+407):(menutitleline+409)])
+      thisfile[(menutitleline+407):(menutitleline+409)] <- ""
+      
+      #now to clean up the extra <html> and <head> tags
+      print(thisfile[htmlline])
+      #this should be the start of body
+      print(thisfile[htmlline+144])
+      #replace from <html> to </head>
+      thisfile[htmlline:(htmlline+14)] <- ""
+      
+      write(x = thisfile, file=paste0("site/_site/",i))
+    }
+  }
+  else {
+    print("NOT THIS ONE")
+  }
+}
+```
+
+
+
+```{r remove index file variable}
+#remove the variable
+rm(indexfile)
+```
+

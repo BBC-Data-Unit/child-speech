@@ -1,0 +1,267 @@
+---
+title: |
+  ![](https://raw.githubusercontent.com/sduiopc/test1/branch1/LNP%20Header-01.jpg){align=right width=40%}  
+  Local authority analysis: `r params$la`
+output: 
+  html_document:
+    df_print: paged
+    self_contained: false
+    lib_dir: site/libs
+    #see https://stackoverflow.com/questions/41237664/reduce-file-size-of-r-markdown-html-output
+params:
+  la: "Essex"
+---
+
+```{r setup, include=FALSE}
+#this saves us having to include these parameters in every code chunk
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      message = F)
+```
+
+```{r import packages}
+#import the tidyverse which includes dplyr, that we'll use
+library(tidyverse)
+#The datatables package 
+library(DT)
+```
+
+# Analysing the impact of the pandemic on children's speech development
+
+Children entering school in the year after the first lockdown are showing a big increase in speech, language and communication (SLC) needs, according to analysis of [DfE data](https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england). Find out how the numbers changed in `r params$la`.
+
+
+```{r import data}
+fileloc = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRm8tw8O_QO_o4bk4Y_3sUlX0N5ukNrCeHj08RyShS3cAEmKTZdvB8g48zDHbl8l_dmDtjOUUrB12L/pub?gid=814230511&single=true&output=csv"
+data = read.csv(fileloc, stringsAsFactors = F)
+```
+
+
+```{r filter and subset}
+#filter to the totals columns we want
+filtereddf <- data %>%
+  dplyr::select(colnames(data)[c(2,4,5,6,7,8,9,10,22)])
+
+#filter to those for this la, and specified cols
+subsetdf <- filtereddf %>%
+  dplyr::filter(la_name == params$la)
+
+#filter to those in the same region
+
+regiondf <- filtereddf %>%
+  dplyr::filter(REGION == subsetdf$REGION[1])
+
+#filter another dataframe to the year on year columns
+yoydata <- data %>%
+  dplyr::filter(la_name == params$la) %>%
+  dplyr::select(colnames(data)[c(2,13,15,17,19,21,3)]) 
+
+yoydata.region <- data %>%
+  dplyr::filter(REGION == subsetdf$REGION[1]) %>%
+  dplyr::select(colnames(data)[c(2,13,15,17,19,21,3)]) 
+
+totaldf <- data %>%
+  dplyr::filter(la_name == "Total") %>%
+  dplyr::select(colnames(data)[c(2,13,15,17,19,21,3)]) 
+```
+
+```{r ranking}
+#install.packages("nombre")
+#library('nombre')
+#convert column to numbers to rank
+x <- as.numeric(str_replace(yoydata.region$YOYperc21to22,"%",""))
+#find the rank of the LA
+thislarank <- rank(-x)[yoydata.region$la_name == params$la]
+lacount <- nrow(yoydata.region)
+#convert to an ordinal like '1st'
+#thislarank <- nombre::ordinal(thislarank)
+```
+
+
+```{r create custom string}
+#store the figures for the earliest and latest years
+fig1516 <- subsetdf[1,2]
+fig2122 <- subsetdf[1,8]
+#store the national change %
+nationalchange <- totaldf$YOYperc21to22[1]
+
+#set a variable to 'rose' or 'dropped' depending on relation of earlier figure to newer one
+changetype <- ifelse(isTRUE(fig2122 > fig1516), "rose", "dropped")
+
+#create a custom string with that
+customstring1 <- paste0("In **",params$la,"** the number of children needing support for speech, language and communication in Year 1 ",changetype," from **",fig1516,"** in 2015/16 to **",fig2122,"** in 2021/22.")
+
+#set a variable to 'rose' or 'dropped' depending on whether figure is above or below 0
+changetypeyoy <- ifelse(yoydata[1,7] > 0, "rose", "dropped")
+
+nationalcomparison <- ifelse(as.numeric(str_remove(yoydata$YOYperc21to22,"%"))>as.numeric(str_remove(nationalchange,"%")), "higher than", "below the")
+
+#create a custom string with that
+customstring2 <- paste0("The number of children needing support for speech, language and communication in Year 1 in 2021/22 **",changetypeyoy," by ",yoydata[1,7],"** compared to the previous academic year. This is ",nationalcomparison," the national rise of **",nationalchange,"**. The authority ranks **",thislarank,"** in the region out of ",lacount," authorities.")
+#the next line shows that in normal text
+#customstring2
+#as.numeric(str_remove(yoydata$YOYperc21to22,"%"))/as.numeric(str_remove(nationalchange,"%"))
+
+```
+
+`r customstring1`
+
+`r customstring2`
+
+## Explore your area
+
+```{r clean headings}
+#clean column headings
+colnames(regiondf) <- str_replace(colnames(regiondf),"X","")
+
+#clean column headings
+colnames(regiondf) <- str_replace(colnames(regiondf),"la_name","Authority")
+#remove the region column
+regiondf$REGION <- NULL
+```
+
+
+
+```{r table js}
+#Create the datatable. Add a caption if you want
+#see https://github.com/rstudio/DT/issues/29 on setting width
+DT::datatable(regiondf,
+              style = 'bootstrap', 
+              caption = 'Numbers of children in year 1 needing speech, language and communication support in each authority. Analysis by the BBC Shared Data Unit', 
+              filter = 'top',
+              options = list(pageLength = 10,
+                             scrollX=TRUE,
+                             autoWidth = TRUE,
+                             order = list(8, 'desc')
+              ), escape = F)
+```
+
+## Chart: numbers of year 1 children needing speech and communication support
+
+```{r load ggplot}
+library(ggplot2)
+#for adding percentage scales
+library(scales)
+```
+
+```{r reshape data}
+#we need the years in the column names to be part of the data
+chartdata <- gather(subsetdf, year, children, X201516:X202122)
+chartdata$year <- str_replace(chartdata$year,"X","")
+```
+
+
+```{r create line plot}
+#round and set the upper and lower limits of the scale based on the max and min values
+lowerlim <- round(min(chartdata$children),-1)-10
+upperlim <- round(max(chartdata$children),-1)+10
+
+ggplot(data=chartdata, aes(x=year, y=children, group = 1, label=children)) +
+  geom_line()+
+  geom_point() + 
+  geom_text(hjust=1, vjust=-1) +
+  theme_minimal() +
+  ylim(lowerlim, upperlim) + 
+  ggtitle("Numbers of year 1 children needing speech and communication support") 
+```
+
+
+## Explore the data: year-on-year change since 2016
+
+```{r table perc js}
+
+#clean column headings
+colnames(yoydata.region) <- str_replace(str_replace(str_replace(colnames(yoydata.region),"YOYperc","Change from 20"),"to"," to "),"la_name","Authority")
+
+#Create the datatable. Add a caption if you want
+#see https://github.com/rstudio/DT/issues/29 on setting width
+DT::datatable(yoydata.region, 
+              style = 'bootstrap', 
+              caption = 'Year-on-year percentage change in year 1 children needing speech, language and communication support in each authority. Analysis by the BBC Shared Data Unit', 
+              filter = 'top',
+              options = list(pageLength = 10,
+                             scrollX=TRUE,
+                             autoWidth = TRUE,
+                             order = list(7, 'desc')
+              ), escape = F)
+```
+
+
+## Chart: year-on-year change in children needing speech and communication support 
+
+```{r combine la and total}
+totaldf[1,1] <- "England"
+yoydata.context <- rbind(yoydata, totaldf)
+```
+
+
+```{r reshape change data}
+#we need the years in the column names to be part of the data
+chartdata.yoy <- gather(yoydata.context, period, change, YOYperc16to17:YOYperc21to22)
+chartdata.yoy$period <- str_replace(chartdata.yoy$period,"YOYperc","")
+chartdata.yoy$period <- paste0("20",str_replace(chartdata.yoy$period,"to","-"))
+#the % means it reads it as a character, so replace and convert to number
+#and round to one decimal place
+chartdata.yoy$change_num <- round(as.numeric(str_replace(chartdata.yoy$change,"%","")),1)
+#use that to create simpler labels
+chartdata.yoy$label <- paste0(as.character(chartdata.yoy$change_num),"%")
+#divide by 100 to convert to a proper decimal percentage
+chartdata.yoy$change_num <- chartdata.yoy$change_num/100
+```
+
+
+
+```{r create vector of label positions}
+#create an empty vector to store label positions
+positions <- c()
+#loop through the numbers
+for (i in chartdata.yoy$change_num){
+  #check if value is positive or negative and set position accordingly
+  pos <- ifelse(i<0,1.6,-1.6)
+  #add number to vector
+  positions <- c(positions,pos)
+}
+
+#generate a vector of alignment positions (1 = left justified; 0 = right justified)
+atoe <- c(1.2,-0.3)
+#repeat it for each pair of values in the data
+alignments <- rep(atoe,times=length(positions)/2)
+#this will be used for hjust= in the ggplot below
+
+```
+
+```{r convert column to factor}
+#https://stackoverflow.com/questions/12774210/how-do-you-specifically-order-ggplot2-x-axis-instead-of-alphabetical-order
+#Turn your  column into a character vector
+chartdata.yoy$la_name <- as.character(chartdata.yoy$la_name)
+#Then turn it back into a factor with the levels in the correct order
+chartdata.yoy$la_name <- factor(chartdata.yoy$la_name, levels=unique(chartdata.yoy$la_name))
+
+```
+
+
+
+```{r create bar}
+#fill = specifies that we want to create a grouped bar chart based on LA name
+p <- ggplot(data=chartdata.yoy, 
+            aes(fill=la_name, 
+                x=period, 
+                y=change_num)) +
+  geom_bar(position="dodge", 
+           stat="identity") + #make it a bar chart. position="dodge" puts the bars  beside each other.
+  geom_text(aes(label=label), 
+            vjust=positions, 
+            hjust=alignments, 
+            color="black", 
+            size=2.5) + #add figures on the bars using the positions created earlier
+  theme_minimal() + #make background minimal
+  scale_fill_manual(values=c("#b90005", "#73859a")) + #customise the colours for the two categories
+  scale_y_continuous(labels = percent) + #add % symbols to the y scale values
+  ylab("Change") + 
+  xlab("Period") +
+  ylim(c(min(chartdata.yoy$change_num)-.01, max(chartdata.yoy$change_num)+.01)) + #expand the range to fit labels
+  labs(fill='') #remove the legend label
+
+#show it
+p + ggtitle("Year-on-year change in year 1 pupils needing SEN support \nfor speech, language and communication") 
+```

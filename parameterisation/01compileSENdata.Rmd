@@ -1,0 +1,18 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Analysing the impact of COVID on special educational needs
+
+Children entering school in the year after the first lockdown are showing a big increase in speech, language and communication (SLC) needs, according to analysis of [DfE data](https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england). This document describes the analysis done, and some of the results.
+
+
+```{r import data}
+fileloc = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRm8tw8O_QO_o4bk4Y_3sUlX0N5ukNrCeHj08RyShS3cAEmKTZdvB8g48zDHbl8l_dmDtjOUUrB12L/pub?gid=814230511&single=true&output=csv"
+data = read.csv(fileloc, stringsAsFactors = F)
+data
+```
+
+
+

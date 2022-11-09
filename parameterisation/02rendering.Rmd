@@ -1,0 +1,56 @@
+---
+title: "Rendering HTML outputs"
+output: html_notebook
+---
+
+# Rendering the HTML
+
+This notebook renders HTML outputs from the 01 notebook through *parameterisation*.
+
+Make sure that you open Index.Rmd and 'knit' that file to create an index.html file in the _site folder first.
+
+## Import the data
+
+First we import the data in order to generate a list of authorities that we can use to specify the parameters and name the files.
+
+```{r import data}
+fileloc = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRm8tw8O_QO_o4bk4Y_3sUlX0N5ukNrCeHj08RyShS3cAEmKTZdvB8g48zDHbl8l_dmDtjOUUrB12L/pub?gid=814230511&single=true&output=csv"
+data = read.csv(fileloc, stringsAsFactors = F)
+#just get one column - it's now a vector
+la <- data$la_name
+```
+
+We remove two of those which combine figures where authorities changed.
+
+```{r generate sample}
+#this reduces to just a few while testing
+#we exclude the last two which are combined authorities
+la <- la[1:155]
+#la <- la[1:10]
+#la
+
+```
+
+
+## Render a markdown file for each LA
+
+The code below takes the Rmd file named and renders a .md file for each area (even though the file itself specifies html_document as its output). 
+
+The files are placed in a subfolder called 'site'.
+
+This is because the next notebook then renders the entire folder as a website, so the HTML in those .md files becomes active.
+
+```{r generate md files}
+#store the location of the paramsfile to use below
+paramsfile <- "01latemplate.Rmd"
+#loop through all regions 
+for (r in la) {
+  print(r)
+  rmarkdown::render(paramsfile, params = list(la = r), output_file = paste(sep="",'site/',stringr::str_replace_all(r," ","-"),'.md'),
+    envir = parent.frame())
+}
+#we remove the space in the name as this appears to create a file missing the navbar
+#str_remove_all(r," ")
+#more at https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-render.html
+
+```

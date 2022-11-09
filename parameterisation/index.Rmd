@@ -1,0 +1,146 @@
+---
+title: |
+  ![](https://raw.githubusercontent.com/sduiopc/test1/branch1/LNP%20Header-01.jpg){align=right width=40%}  
+  Children's language needs rise post lockdown
+output:
+  html_document:
+    df_print: paged
+header-includes:
+    \includegraphics[width=50%]{https://raw.githubusercontent.com/sduiopc/test1/branch1/LNP%20Header-01.jpg}\LARGE\\}
+  
+---
+
+***This story is available for use by the BBC’s local news partners. Please do not share outside of the network. It is under strict embargo until November 7 at 0001.*** 
+
+***Use the dropdown navigation menus across the top of the page to see the data for a specific local authority***
+
+# What’s the story? {.tabset .tabset-fade .tabset-pills}
+
+```{r set display to false, include=FALSE}
+#this saves us having to include these parameters in every code chunk
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      message = F)
+```
+
+
+
+**We’ve looked at the numbers of children needing support for 'Speech, language and communication needs' in primary schools. In particular, children in Year 1, who were at pre-school age during the lockdowns of the 2020/21 academic year.**
+
+Speech and language is the biggest category of special educational need (SEN), accounting for more than half of year 1 children needing SEN support, and has experienced one of the biggest increases in the last year.
+
+The number of children needing speech and language support in the first year of school has risen 10% - three times that of recent rises, BBC analysis shows.
+
+The increase is partly down to the effect of lockdown restrictions according to experts. 
+
+The Royal College of Speech and Language Therapists said the profession was struggling to cope with the demand.
+
+The government said it was putting £180m into early years development.
+
+Analysis by the BBC's Shared Data Unit found the number of five and six-year-olds needing help with language increased more than most other areas of special educational needs. 
+
+A total of 42,341 children required extra support in 2021/22, up from 38,560 in 2020/21. 
+
+The charity Speech and Language UK said this could have been down to the lack of stimulus available to young children during the pandemic.
+
+
+## What the experts say
+
+### Kamini Gadhok, Chief Executive of the Royal College of Speech, Language, Therapists (RCSLT)
+
+**Q: Why is it so important children don’t fall behind in terms of their language development?**
+
+A: “I think communication is the bedrock of all our learning, both social and emotional, as well as educational learning. Our interaction with our families and communities, and most importantly, for young children as well, making friends. And if we don't support children who have needs early on, we do know that they go on to have, or can go on to have significant needs as they get older.
+
+**Q: How important is it that we get it right from the beginning?**
+
+A: “So if you're looking at educational attainment, we know that at the age of five your children have difficulties with communication. They are six times less likely to reach the expected standard of English. That's you know, in itself shocking. But if you then look at other areas of development, such as behaviour. We know that over eighty percent of children with behaviour problems have previously un-identified speech and language difficulties, and then things like mental health, which we know is a really big priority.
+
+“But children with mental health problems are three times more likely to have communication needs. So you know It's really important that we support children early on, and they continue to get the support they need.
+
+“It's very important to note that more than ten percent of children have long term speech, language and communication needs. So these are children who are not going to just grow out of it. They're going to need support through their education and to help them with accessing the curriculum, which is a really big part of what speech, language therapists do with schools.
+
+**Q: So we've looked at the data, across the country there is an increase in the number of children with a speech, language, and communication needs - is it a worry?**
+
+A: “It is a real worry. Our members have been telling us anecdotally that they've been seeing a huge increase in the number of children referred to them. We've been very aware, from the surveys we've done, that the pandemic has had an impact, not just because of services being closed or schools not being open, but also because children were not able to interact that they, as in a way that they used to.
+
+“It's really important to remember that we learn to communicate by socialising with other people. So for children and young people, it's being able to socialise with other children, to be able to mix with family members, to be out and about in the community, or even simple things like being in the playground. So all of those things where and interactions were impacted during the pandemic. So, as I said, we were very aware from our members that they were seeing more children being referred.
+
+“But I think the data actually now backs up that anecdotal feedback.
+
+“I think what's really important as well is the latest data that we have from the Department for Education is the number of children who've been identified as having speech language difficulties which has gone up by over ninety-four thousand since 2015/2016. So over ninety-four thousand more children needing help. That's a significant number of children.”
+
+**Q: Is there a solution to this?**
+
+A: “Well, we've been raising concerns even pre pandemic, because there was a situation within the profession, and for services that were already very, very stretched. So we have seen a cut in funding to speech and language services over the years. Children's communication needs have not been prioritized within government, and we were very concerned about this. So what we are now seeing post pandemic, or actually, we still obviously have an issue with the virus is that we've hit a crisis point with services, where services are not able to meet the level of demand that we've just talked about.
+ 
+**Q: So are we actually creating a problem for the generation coming behind – because of the backlog if it’s harder to access services?**
+
+ 
+A: “There is a significant backlog at the moment. Figures show that for the Nhs there are more than seventy-four thousand children waiting on a waiting list. We know by talking to our members who work in the private sector that they do not have enough speech and language therapists to meet the demand that's out there. We know that for years there's been a lack of proper workforce planning, so there are not enough speech there, because you've been trained over time, and we are now listed as a shortage profession on the Home Office website. So there is a real issue about trying to meet the levels of need that are now in the system.”
+ 
+**Q: Is there enough funding for schools to actually get speech and language therapists on board to help?**
+
+A: "I think this is something that we are hoping the government will really look at very seriously. So  both in terms of funding through schools, but also very critically funding through the NHS. For many years, as I said, children with communication needs have not been a priority within the NHS. And, as you can imagine, when funding is tight, If it's not listed as a priority within the system, then that's an area which will potentially be cut rather than even invested in. And that's what we have seen over the years. There is an opportunity because the NHS plan is going to be refreshed. So if we can get something in there about meeting the needs of children with speech, language, communication needs that would be really important, so that that creates the impetus within local systems to work together with schools to ensure that we work to provide the services that these children need."
+
+
+### Jane Harris, chief executive of Speech and Language UK 
+
+**Q: Why is it so important young children don’t fall behind in their language development?**
+
+A: “We see more and more children, struggling to talk and understand words and that's really a concerning situation. We know that if children don't get support with speech and language challenges they are more likely to fall behind in subjects like English and maths at school. They are more likely to have mental health problems. They are more likely to be unemployed in later life and they're more likely to end up in the criminal justice system.
+
+“We really want government and school leaders across the country to wake up to this situation and put in place much more support.
+
+“This is a really serious problem. But at the moment our education system is focused on reading, writing and maths. We've known that for years, but we need our schools and our nurseries to understand that speech and language is fundamental to children's success. They need to put in much more support for children with these challenges.”
+
+**Q: Why do you think we’re seeing an increase?**
+
+A: “There is a group of children, about 7.6 percent of children, who have an inherent speech and language challenge. It's part of who they are. And they need support with that and for too long we've ignored that group of children and we need to recognise their needs much better, but also we've had the impact of Covid.
+
+“We know that during Covid children did not have the opportunities to talk to other children. And they learn a lot from learning from talking to other children. They also didn't have the opportunities for new experiences. So if you think about how children learn to speak and learn words, they learn by doing new things they learn from going to a farm and seeing a cow and then they know the word cow. If children do not have those new experiences - which they didn't during the pandemic - they do not have the opportunity and the reason to learn those new words and learn to talk.”
+
+**Q: What can be done to help with the rise in children needing language support?**
+
+A: “Firstly, it's a spotting problem. Too many schools do not have the funds or the resources to spot the children who need help. We would really like the government to invest in a free tool so that schools can spot the children who do. Otherwise they end up with other labels. They get labelled with mental health problems or behavioural problems, whereas eighty percent of children with behavioural and emotional difficulties actually have an underlying speech and language challenge. So if we can help schools and nurseries to spot as many children as possible that will really help.
+
+“Secondly, schools and nurseries need much more guidance on what kind of programmes and what kind of practices help children to thrive. But thirdly, we need the government to invest in some preventative work because some of these challenges are preventable and families don't always know what they can do to help.
+
+“We see children who've ended up excluded from schools because they haven't had the right support with speech and language challenges in mainstream schools. We see families who've had children refusing school, we see families where children have been bullied and children have had mental health problems. It really impacts the whole family.
+
+
+
+### Department for Education response
+
+Up to £180 million of government funding over the next three years will support the sector to focus on children’s development in their earliest of years and help to address existing recruitment and retention challenges. It follows commitments by the government to improve parents’ access to affordable, flexible childcare through ambitious reforms, for which work continues.
+
+**Minister for Schools and Childhood, Kelly Tolhurst, said:**
+
+> “The early years of a child’s life are vital, not only in establishing important developmental skills, but also in building a lifelong love of learning that will help them succeed in adult life.
+
+> “I’m really proud of the quality and dedication of our early years workforce. This package of support is a huge investment in their skills and professional development, because raising the status of this important sector is key to its growth.”
+
+The Nuffield Early Language Intervention (NELI) programme, which has already helped to boost the speech and language skills of an estimated 90,000 children, will also continue this academic year.
+
+The Department for Education, in partnership with the Department of Health and Social Care, has also launched a new ‘Better Health - Start for Life’ campaign, providing parents of children aged 0 to 4 with practical advice and tips to help them develop their child’s language and literacy skills before starting school. Funding from today’s announcement will also support parents to gain additional advice through new Family Hubs, expected to open in the first half of 2023.
+
+The package of support, which will benefit pre-school children all over England, includes:
+
+* **Early maths, language, and social development training for 10,0000 professionals through the third phase of the Professional Development Programme (PDP3)** – more than 1,300 professionals in 51 local authorities were provided with bespoke training designed to support the learning and development of children affected by the pandemic during the second phase of this programme, meaning around 20,000 children will have benefited from better trained, more confident staff;
+* **The national rollout of the Expert and Mentors programme to provide bespoke leadership support to 7,500 early years settings and childminders** to address the impact of the pandemic on children in their care.  This support is free and available across the country to eligible settings. Around 200 settings across the North of England, Lancashire and Yorkshire received support through a pilot of this programme this Spring;
+* **Graduate-level specialist training** leading to early years teacher status - evidence is very clear that higher qualifications are consistently identified as a predictor of higher quality and associated with better child outcomes;
+
+## Could there be other reasons for the change?
+
+We looked at other potential causes for the increase in speech, language and communication needs. Those included:
+
+* An increase in pupils
+* An increase in pupils with English as a second language (ESL)
+* A 'bounce back' after a drop in the previous year
+
+Overall pupil numbers in primary schools have been declining since 2018/19 from 4.73m in that year to 4.66m in 2021/22. Numbers in Year 1 have broadly declined over the same period. In 2021/22 there was a small increase (0.8%) from 619,000 to 624,000 - returning to numbers similar to 2019/20. However, this is much smaller than the increase in pupil numbers needing language support in that year (10%).
+
+Regardless of pupil numbers, the *proportion* of children in Year 1 with speech and language needs has also seen an increase, from 6.2% in 2020/21 to 6.8% in 2021/22. This also represents a 10% increase (0.6 is a tenth of 6.2) and double the increase seen in the previous five years covered in the data (previous years have seen increases of 0.2 or 0.3 percentage points).
+
+The numbers of pupils with English as a second language (ESL) increased slightly between 2020/21 and 2021/22, from 3,367 to 3,419 - but this 0.2% increase was less than the increase in overall pupil numbers and so proportionally, the percentage of children with ESL actually went down. 
+
