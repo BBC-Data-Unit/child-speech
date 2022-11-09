@@ -1,0 +1,34 @@
+la_name,(blank),,,,,,,,,,,,,
+region_name,(blank),,,Data pivoted from sen_ncyear,,,,,,,,,,
+geographic_level,National,,,,,,,,,,,,,
+pupil_sen_status,Total,,,,,,,,,,,,,
+phase_type_grouping,State-funded primary,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+Sum of nc_year_1,Column Labels,,,,,,,,,,,,,
+Row Labels,201516,201617,201718,201819,201920,202021,202122,Grand Total,YOY 20-21,20-21 %,YOY 21-22,21-22 %,5 year change,5 year change %
+"Speech, Language and Communications needs",33464,35061,35949,37178,37632,38560,42341,260185,928,2%,3781,10%,7280,21%
+"Social, Emotional and Mental Health",10809,10902,10685,10764,11017,10252,10760,75189,-765,-7%,508,5%,-142,-1%
+Autistic Spectrum Disorder,5039,5408,5900,6506,7338,7852,8490,46533,514,7%,638,8%,3082,57%
+Moderate Learning Difficulty,13593,13108,12191,11094,9930,7819,7603,75338,-2111,-21%,-216,-3%,-5505,-42%
+SEN support but no specialist assessment of type of need,3471,3700,3282,3001,2749,2698,3044,21945,-51,-2%,346,13%,-656,-18%
+Specific Learning Difficulty,3540,3385,3238,3195,2999,2637,2864,21858,-362,-12%,227,9%,-521,-15%
+Physical Disability,2441,2572,2524,2511,2496,2291,2289,17124,-205,-8%,-2,0%,-283,-11%
+Other Difficulty/Disability,3080,2880,2820,2664,2536,2172,2181,18333,-364,-14%,9,0%,-699,-24%
+Hearing Impairment,1313,1355,1442,1398,1403,1256,1174,9341,-147,-10%,-82,-7%,-181,-13%
+Visual Impairment,728,737,786,732,742,667,628,5020,-75,-10%,-39,-6%,-109,-15%
+Severe Learning Difficulty,545,539,506,515,444,477,457,3483,33,7%,-20,-4%,-82,-15%
+Multi- Sensory Impairment,244,265,291,278,273,239,319,1909,-34,-12%,80,33%,54,20%
+Profound & Multiple Learning Difficulty,302,274,284,249,276,267,257,1909,-9,-3%,-10,-4%,-17,-6%
+Grand Total,78569,80186,79898,80085,79835,77187,82407,558167,-2648,-3%,5220,7%,2221,3%
+,,,,,,,,,0,#DIV/0!,0,#DIV/0!,0,#DIV/0!
+,,,,,,,,,0,#DIV/0!,0,#DIV/0!,0,#DIV/0!
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+Row Labels,"Speech, Language and Communications needs",Autistic Spectrum Disorder,"Social, Emotional and Mental Health",Moderate Learning Difficulty,Physical Disability,Other Difficulty/Disability,SEN support but no specialist assessment of type of need,Severe Learning Difficulty,Specific Learning Difficulty,Hearing Impairment,Profound & Multiple Learning Difficulty,Visual Impairment,Multi- Sensory Impairment,
+201516,62908,11628,14044,10970,4698,4186,3448,3326,2828,2084,1840,1170,384,
+201617,62724,12758,13484,9750,4682,4316,3432,3302,2734,2264,1702,1252,464,
+201718,64454,14152,12752,9780,4600,3950,3314,3244,2754,2226,1588,1270,444,
+201819,65484,15336,13234,8878,4544,3686,3032,3334,2918,2156,1614,1230,478,
+201920,67836,17356,13950,8016,4464,3618,2856,3248,2872,2248,1632,1194,436,
+202021,68270,17292,11854,6506,4186,3168,2934,3178,2850,2058,1496,1100,472,
+202122,72472,18076,13614,6052,4090,3258,3132,2892,2880,2038,1648,1126,500,
