@@ -1,0 +1,299 @@
+Special educational needs in England
+2021/22 Academic Year
+
+Description
+
+This document describes the data included in the ‘Special educational needs in England’ National Statistics release’s underlying data files. This data is released under the terms of the  Open Government License and is intended to meet at least 3 stars for  Open Data.
+
+The publication methodology, available on the publication report, should be referenced alongside this data. It provides information on the data sources, their coverage and quality as well as explaining methodology used in producing the data.
+
+Coverage
+
+This release provides information on the number of schools and pupils in:
+
+- state-funded primary schools
+- state-funded secondary schools
+- state-funded special schools
+- non-maintained special schools
+- pupil referral units
+- independent schools
+
+It includes information on:
+
+- pupil numbers, including, SEN provision, SEN type of need gender, ethnicity, language and free school meals eligibility
+- school numbers, including resourced provision, SEN units and approved provisions (special schools only)
+
+The information is based on data collected via the pupil level spring school census, school level annual school census, general hospital schools census and alternative provision census.
+
+File formats and conventions
+
+Rounding
+
+This dataset has not had suppression applied.
+
+Conventions
+
+The following convention is used throughout the underlying data.
+
+‘x’ Not applicable
+
+‘z’ Not available
+
+Data files
+
+01 - Pupils in all schools, by type of SEN provision - including independent schools and general hospital schools - 2016 to 2022
+
+Filename: sen_phase_type.csv
+Geographic levels: National; Local Authority; Regional
+Time period: 2015/16 to 2021/22
+Content summary: Number of pupils in state-funded nursery, primary, secondary and special schools, non-maintained special schools, pupil referral units and independent schools by SEN provision, type of need and school type
+
+Variable names and descriptions for this file are provided below:
+
+Variable name          |  Variable description
+---------------------  |  -------------------------------------------------------------------------------------------
+ehc_plan               |  EHC plans/Statements of SEN
+ehc_plan_percent       |  EHC plans/Statements of SEN (percent)
+hospital_school        |  Hospital school flag - Yes/No
+phase_type_grouping    |  Phase type of school - Phase (primary, secondary, special, PRU, independent)
+sen_support            |  SEN support
+sen_support_percent    |  SEN support (percent)
+total_pupils           |  Headcount
+type_of_establishment  |  School type detail - For example - academy converter, community school, independent special
+
+Footnotes:
+
+1. Totals include state-funded nursery, primary, secondary and special schools, non-maintained special schools, pupil referral units and independent schools
+2. SEN support in Independent schools refers to pupils recognised as having SEN but without an EHC plan
+
+
+02 - Age and Gender, by type of SEN provision and type of need - 2016 to 2022
+
+Filename: sen_age_gender_.csv
+Geographic levels: National; Local Authority; Regional
+Time period: 2015/16 to 2021/22
+Content summary: Number of pupils in state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units by SEN provision, type of need, age and gender.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name               |  Variable description
+--------------------------  |  -----------------------------------------------------------------------------------------
+age_10                      |  Age 10
+age_10_percent              |  Age 10 (%)
+age_11                      |  Age 11
+age_11_percent              |  Age 11 (%)
+age_12                      |  Age 12
+age_12_percent              |  Age 12 (%)
+age_13                      |  Age 13
+age_13_percent              |  Age 13 (%)
+age_14                      |  Age 14
+age_14_percent              |  Age 14 (%)
+age_15                      |  Age 15
+age_15_percent              |  Age 15 (%)
+age_16                      |  Age 16
+age_16_percent              |  Age 16 (%)
+age_17                      |  Age 17
+age_17_percent              |  Age 17 (%)
+age_18                      |  Age 18
+age_18_percent              |  Age 18 (%)
+age_19_and_over             |  Age 19 and over
+age_19_and_over_percent     |  Age 19 and over (%)
+age_2_and_under             |  Age 2 and under
+age_2_and_under_percent     |  Age 2 and under (%)
+age_3                       |  Age 3
+age_3_percent               |  Age 3 (%)
+age_4                       |  Age 4
+age_4_percent               |  Age 4 (%)
+age_5                       |  Age 5
+age_5_percent               |  Age 5 (%)
+age_6                       |  Age 6
+age_6_percent               |  Age 6 (%)
+age_7                       |  Age 7
+age_7_percent               |  Age 7 (%)
+age_8                       |  Age 8
+age_8_percent               |  Age 8 (%)
+age_9                       |  Age 9
+age_9_percent               |  Age 9 (%)
+number_of_pupils            |  Headcount
+phase_type_grouping         |  Phase type of school - Phase (primary, secondary, special, PRU, independent)
+primary_need                |  Primary type of need - (ASD, HI, VI…)
+pupil_gender_boys           |  Boys
+pupil_gender_boys_percent   |  Boys (%)
+pupil_gender_girls          |  Girls
+pupil_gender_girls_percent  |  Girls (%)
+pupil_sen_status            |  SEN provision - EHC plan/Statement of SEN or SEN support/School Action/School Action plus
+
+Footnotes:
+
+1. Totals include state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units. Does not include independent schools or the small number of general hospital schools.
+
+
+03 - FSM, Ethnicity and Language, by type of SEN provision and type of need - 2016 to 2022
+
+Filename: sen_fsm_ethnicity_language_.csv
+Geographic levels: National; Local Authority; Regional
+Time period: 2015/16 to 2021/22
+Content summary: Number of pupils in state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units by SEN provision, type of need, free school meal eligibility, language and ethnicity.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                                  |  Variable description
+---------------------------------------------  |  -----------------------------------------------------------------------------------------
+ethnicity_any_other_asian_background           |  Asian - any other Asian background
+ethnicity_any_other_asian_background_percent   |  Asian - any other Asian background (%)
+ethnicity_any_other_black_background           |  Black - Any other Black background
+ethnicity_any_other_black_background_percent   |  Black - Any other Black background (%)
+ethnicity_any_other_ethnic_group               |  Any other ethnic group
+ethnicity_any_other_ethnic_group_percent       |  Any other ethnic group (%)
+ethnicity_any_other_mixed_background           |  Mixed - Any other mixed background
+ethnicity_any_other_mixed_background_percent   |  Mixed - Any other mixed background (%)
+ethnicity_any_other_white_background           |  White - any other White background
+ethnicity_any_other_white_background_percent   |  White - any other White background (%)
+ethnicity_bangladeshi                          |  Asian - Bangladeshi
+ethnicity_bangladeshi_percent                  |  Asian - Bangladeshi (%)
+ethnicity_black_african                        |  Black - Black African
+ethnicity_black_african_percent                |  Black - Black African (%)
+ethnicity_black_caribbean                      |  Black - Black Caribbean
+ethnicity_black_caribbean_percent              |  Black - Black Caribbean (%)
+ethnicity_chinese                              |  Asian - Chinese
+ethnicity_chinese_percent                      |  Asian - Chinese (%)
+ethnicity_gypsy_roma                           |  White - Gypsy/Roma
+ethnicity_gypsy_roma_percent                   |  White - Gypsy/Roma (%)
+ethnicity_indian                               |  Asian - Indian
+ethnicity_indian_percent                       |  Asian - Indian (%)
+ethnicity_irish                                |  White - Irish
+ethnicity_irish_percent                        |  White - Irish (%)
+ethnicity_pakistani                            |  Asian - Pakistani
+ethnicity_pakistani_percent                    |  Asian - Pakistani (%)
+ethnicity_traveller_of_irish_heritage          |  White - Traveller of Irish heritage
+ethnicity_traveller_of_irish_heritage_percent  |  White - Traveller of Irish heritage (%)
+ethnicity_unclassified                         |  Unclassified
+ethnicity_unclassified_percent                 |  Unclassified (%)
+ethnicity_white_and_asian                      |  Mixed - White and Asian
+ethnicity_white_and_asian_percent              |  Mixed - White and Asian (%)
+ethnicity_white_and_black_african              |  Mixed - White and Black African
+ethnicity_white_and_black_african_percent      |  Mixed - White and Black African (%)
+ethnicity_white_and_black_caribbean            |  Mixed - White and Black Caribbean
+ethnicity_white_and_black_caribbean_percent    |  Mixed - White and Black Caribbean (%)
+ethnicity_white_british                        |  White - White British
+ethnicity_white_british_percent                |  White - White British (%)
+fsm_eligible                                   |  Eligible for free school meals
+fsm_eligible_percent                           |  Eligible for free school meals (%)
+fsm_not_eligible                               |  Not eligible for free school meals
+fsm_not_eligible_percent                       |  Not eligible for free school meals (%)
+language_english                               |  First language is known to be, or believed to be English
+language_english_percent                       |  First language is known to be, or believed to be English (%)
+language_other                                 |  First language is known to be, or believed to be, other than English
+language_other_percent                         |  First language is known to be, or believed to be, other than English (%)
+language_unclassified                          |  First language unclassified
+language_unclassified_percent                  |  First language unclassified (%)
+number_of_pupils                               |  Headcount
+phase_type_grouping                            |  Phase type of school - Phase (primary, secondary, special, PRU, independent)
+primary_need                                   |  Primary type of need - (ASD, HI, VI…)
+pupil_sen_status                               |  SEN provision - EHC plan/Statement of SEN or SEN support/School Action/School Action plus
+
+Footnotes:
+
+1. Totals include state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units. Does not include independent schools or the small number of general hospital schools.
+
+
+04 - Year group, by type of SEN provision and type of need - 2016 to 2022
+
+Filename: sen_ncyear_.csv
+Geographic levels: National; Local Authority; Regional
+Time period: 2015/16 to 2021/22
+Content summary: Number of pupils in state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units by SEN provision, type of need and national curriculum year.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name            |  Variable description
+-----------------------  |  -----------------------------------------------------------------------------------------
+nc_early_years           |  Early years
+nc_early_years_percent   |  Early years (%)
+nc_not_followed          |  National curriculum not followed
+nc_not_followed_percent  |  National curriculum not followed (%)
+nc_reception             |  Reception
+nc_reception_percent     |  Reception (%)
+nc_year_1                |  Year group  1
+nc_year_1_percent        |  Year group  1 (%)
+nc_year_10               |  Year group  10
+nc_year_10_percent       |  Year group  10 (%)
+nc_year_11               |  Year group  11
+nc_year_11_percent       |  Year group  11 (%)
+nc_year_12               |  Year group  12
+nc_year_12_percent       |  Year group  12 (%)
+nc_year_13               |  Year group  13
+nc_year_13_percent       |  Year group  13 (%)
+nc_year_14               |  Year group  14
+nc_year_14_percent       |  Year group  14 (%)
+nc_year_2                |  Year group  2
+nc_year_2_percent        |  Year group  2 (%)
+nc_year_3                |  Year group  3
+nc_year_3_percent        |  Year group  3 (%)
+nc_year_4                |  Year group  4
+nc_year_4_percent        |  Year group  4 (%)
+nc_year_5                |  Year group  5
+nc_year_5_percent        |  Year group  5 (%)
+nc_year_6                |  Year group  6
+nc_year_6_percent        |  Year group  6 (%)
+nc_year_7                |  Year group  7
+nc_year_7_percent        |  Year group  7 (%)
+nc_year_8                |  Year group  8
+nc_year_8_percent        |  Year group  8 (%)
+nc_year_9                |  Year group  9
+nc_year_9_percent        |  Year group  9 (%)
+number_of_pupils         |  Headcount
+phase_type_grouping      |  Phase type of school - Phase (primary, secondary, special, PRU, independent)
+primary_need             |  Primary type of need - (ASD, HI, VI…)
+pupil_sen_status         |  SEN provision - EHC plan/Statement of SEN or SEN support/School Action/School Action plus
+
+Footnotes:
+
+1. Totals include state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units. Does not include independent schools or the small number of general hospital schools.
+
+
+05 - Secondary need, by type of SEN provision and type of need - 2016 to 2022
+
+Filename: sen_secondary_need_.csv
+Geographic levels: National; Local Authority; Regional
+Time period: 2015/16 to 2021/22
+Content summary: Number of pupils in state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units by SEN provision, primary type of need and secondary type of need
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                |  Variable description
+---------------------------  |  -----------------------------------------------------------------------------------------
+number_of_pupils             |  Headcount
+phase_type_grouping          |  Phase type of school - Phase (primary, secondary, special, PRU, independent)
+primary_need                 |  Primary type of need - (ASD, HI, VI…)
+pupil_sen_status             |  SEN provision - EHC plan/Statement of SEN or SEN support/School Action/School Action plus
+secondary_need_asd           |  Autistic Spectrum Disorder
+secondary_need_asd_percent   |  Autistic Spectrum Disorder (%)
+secondary_need_hi            |  Hearing impairment
+secondary_need_hi_percent    |  Hearing impairment (%)
+secondary_need_mld           |  Moderate Learning  Difficulty
+secondary_need_mld_percent   |  Moderate Learning  Difficulty (%)
+secondary_need_msi           |  Multi-sensory Impairment
+secondary_need_msi_percent   |  Multi-sensory Impairment (%)
+secondary_need_nsa           |  SEN support but no specialist assessment of type of need
+secondary_need_nsa_percent   |  SEN support but no specialist assessment of type of need (%)
+secondary_need_oth           |  Other Difficulty or Disability
+secondary_need_oth_percent   |  Other Difficulty or Disability (%)
+secondary_need_pd            |  Physical Disability
+secondary_need_pd_percent    |  Physical Disability (%)
+secondary_need_pmld          |  Profound and Multiple Learning Difficulty
+secondary_need_pmld_percent  |  Profound and Multiple Learning Difficulty (%)
+secondary_need_semh          |  Social, Emotional and Mental Health
+secondary_need_semh_percent  |  Social, Emotional and Mental Health (%)
+secondary_need_slcn          |  Speech, Language and Communications needs
+secondary_need_slcn_percent  |  Speech, Language and Communications needs (%)
+secondary_need_sld           |  Severe Learning Difficulty
+secondary_need_sld_percent   |  Severe Learning Difficulty (%)
+secondary_need_spld          |  Specific Learning Difficulty
+secondary_need_spld_percent  |  Specific Learning Difficulty (%)
+secondary_need_vi            |  Visual impairment
+secondary_need_vi_percent    |  Visual impairment (%)
+
+Footnotes:
+
+1. Totals include state-funded nursery, primary, secondary and special schools, non-maintained special schools and pupil referral units. Does not include independent schools or the small number of general hospital schools.
