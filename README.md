@@ -20,6 +20,12 @@ Speech and language was the biggest category of need, accounting for more than h
 
 [Further spreadsheet analysis compared the rise in Year 1 to other year groups](https://github.com/BBC-Data-Unit/child-speech/blob/main/sen_ncyear_COMPARE_YRGROUP.xlsx). This found that the rise in Year 1 was higher than any other age group, apart from Early Years. However, this was distorted by the number of pupils in Early Years education dropping significantly in the previous year due to parents keeping children home during the pandemic. The same drop did not exist in Year 1. The same pattern applied when the change in proportion was compared between years. 
 
+To present the analysis for each local authority R notebooks were written using **parameterisation**:
+
+* [Produce an analysis for a given local authority](https://github.com/BBC-Data-Unit/child-speech/blob/main/parameterisation/01latemplate.Rmd)
+* [Render 155 versions of that analysis](https://github.com/BBC-Data-Unit/child-speech/blob/main/parameterisation/02rendering.Rmd) - one for each local authority
+* [Generate 155 HTML versions of that analysis - including code cleaning](https://github.com/BBC-Data-Unit/child-speech/blob/main/parameterisation/03renderandclean.Rmd)
+* [Generate an index page that linked to those](https://github.com/BBC-Data-Unit/child-speech/blob/main/parameterisation/index.Rmd)
 
 ## Regional analysis
 
